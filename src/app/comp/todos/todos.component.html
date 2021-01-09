@@ -1,0 +1,8 @@
+<div class="row" *ngFor="let todo of todos">
+    <div class="col">
+        <input type="checkbox" [checked]="todo.isComplete" (change)="changeTodoStatus(todo)">
+    </div>
+    <div class="col"> <span [ngClass]="{compltedTodo:todo.isComplete}"> {{todo.title}} </span>  </div>
+    <div class="col" >{{todo.date | date}}</div>
+    <div class="col" (click)="deleteTodo(todo)">Delete</div>
+  </div>
